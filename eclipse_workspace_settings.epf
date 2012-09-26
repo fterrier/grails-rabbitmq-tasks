@@ -1,0 +1,6 @@
+org.eclipse.jdt.core/org.eclipse.jdt.core.classpathVariable.GRAILS_IVYCACHE=/Users/fterrier/.grails/ivy-cache
+org.eclipse.jdt.core/org.eclipse.jdt.core.classpathVariable.GRAILS_WORKDIR=/Users/fterrier/.grails/2.1.0
+org.eclipse.jdt.core/org.eclipse.jdt.core.classpathVariable.GRAILS_HOME=/Users/fterrier/Projects/grails-2.1.0
+org.eclipse.core.resources/pathvariable.GRAILS_IVYCACHE=/Users/fterrier/.grails/ivy-cache
+org.eclipse.core.resources/pathvariable.GRAILS_WORKDIR=/Users/fterrier/.grails/2.1.0
+org.eclipse.core.resources/pathvariable.GRAILS_HOME=/Users/fterrier/Projects/grails-2.1.0
