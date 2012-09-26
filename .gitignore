@@ -10,3 +10,4 @@ target
 /web-app/WEB-INF/classes
 *.zip
 plugin.xml
+eclipse_workspace_settings.epf
