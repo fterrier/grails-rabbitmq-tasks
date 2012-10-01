@@ -26,12 +26,19 @@ abstract class Task implements Progress {
 	Boolean aborted = false;
 	
 	abstract def executeTask()
-	
 	abstract boolean isUnique()
-	abstract String getFormView()
-	abstract Map getFormModel()
-	abstract String getOutputFilename()
-	abstract String getInformation()
+	
+	String getFormView() {
+		return null
+	}
+	
+	Map getFormModel() {
+		return null
+	}
+	
+	String getOutputFilename() {
+		return null
+	}
 	
 	File getFolder() {
 		def folder = new File(grailsApplication.config.task.temp.folder + File.separator + this.getId())

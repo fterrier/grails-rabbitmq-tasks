@@ -275,14 +275,10 @@ class TaskController {
 }
 
 class TaskWithFileCommand {
-	String encoding
-	String delimiter
 	MultipartFile file
 	
 	static constraints = {
 		file(blank:false, nullable:false)
-		delimiter(blank:false, nullable:false)
-		encoding(blank:false, nullable:false)
 	}
 }
 	

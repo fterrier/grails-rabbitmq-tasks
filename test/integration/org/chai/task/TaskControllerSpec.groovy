@@ -268,8 +268,6 @@ class TaskControllerSpec extends IntegrationTests {
 		when:
 		taskController.params['class'] = 'DummyFileTask'
 		taskController.params.dataId = '1'
-		taskController.params.encoding = 'UTF-8'
-		taskController.params.delimiter = ','
 		taskController.params.file = grailsMockMultipartFile
 		taskController.createTaskWithFile()
 		
@@ -298,8 +296,6 @@ class TaskControllerSpec extends IntegrationTests {
 		taskController.modelAndView.viewName == '/task/dummyFile'
 		taskController.modelAndView.model.taskWithFile.errors.getFieldErrors('file').size() == 1
 		taskController.modelAndView.model.taskWithFile.errors.getFieldErrors('inputFilename').size() == 1
-		taskController.modelAndView.model.taskWithFile.errors.getFieldErrors('encoding').size() == 1
-		taskController.modelAndView.model.taskWithFile.errors.getFieldErrors('delimiter').size() == 1
 		taskController.modelAndView.model.task.errors.getFieldErrors('dataId').size() == 1
 		Task.count() == 0
 	}
@@ -325,8 +321,6 @@ class TaskControllerSpec extends IntegrationTests {
 		taskController.modelAndView.viewName == '/task/dummyFile'
 		taskController.modelAndView.model.taskWithFile.errors.getFieldErrors('file').size() == 0
 		taskController.modelAndView.model.taskWithFile.errors.getFieldErrors('inputFilename').size() == 1
-		taskController.modelAndView.model.taskWithFile.errors.getFieldErrors('encoding').size() == 0
-		taskController.modelAndView.model.taskWithFile.errors.getFieldErrors('delimiter').size() == 0
 		taskController.modelAndView.model.task.errors.getFieldErrors('dataId').size() == 1
 		Task.count() == 0
 	}
