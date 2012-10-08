@@ -12,6 +12,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.NotImplementedException
 import org.apache.shiro.SecurityUtils;
 import org.chai.task.Task.TaskStatus
+import org.codehaus.groovy.grails.commons.ConfigurationHolder;
 import org.springframework.web.multipart.MultipartFile
 
 class TaskController {
@@ -23,6 +24,17 @@ class TaskController {
 		return params.targetURI?: "/"
 	}
 	
+	/**
+	* Lists all tasks currently saved in the database
+	*/
+	def list = {
+		params.max = Math.min(params.max ? params.int('max') : grailsApplication.config.site.entity.list.max, 100)
+		params.offset = params.offset ? params.int('offset'): 0
+	   
+		def tasks = Task.list(params)
+	   
+		render (view: '/task/list', model:[tasks: tasks])
+	}
 	
 	/**
 	 * Ajax call that gets the progress of an individual task

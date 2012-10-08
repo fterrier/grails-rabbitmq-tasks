@@ -18,7 +18,7 @@ class TasksGrailsPlugin {
     ]
 
     // TODO Fill in these fields
-    def title = "Tasks Plugin" // Headline display name of the plugin
+    def title = "Rabbitmq Tasks Plugin" // Headline display name of the plugin
     def author = "François Terrier"
     def authorEmail = "fterrier@gmail.com"
     def description = '''\
@@ -28,7 +28,7 @@ them, and aborting them.
 '''
 
     // URL to the plugin's documentation
-    def documentation = "http://grails.org/plugin/tasks"
+    def documentation = "http://grails.org/plugin/rabbitmq-tasks"
 
     // Extra (optional) plugin metadata
 
@@ -42,6 +42,6 @@ them, and aborting them.
     def issueManagement = [ system: "JIRA", url: "http://jira.grails.org/browse/GPTASKS" ]
 
     // Online location of the plugin's browseable source code.
-    def scm = [ url: "http://github.com/fterrier/grails-tasks/" ]
+    def scm = [ url: "http://github.com/fterrier/grails-rabbitmq-tasks/" ]
 
 }
