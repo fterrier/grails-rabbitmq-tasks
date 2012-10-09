@@ -35,7 +35,7 @@ them, and aborting them.
     def organization = [ name: "Clinton Health Access Initiative", url: "http://www.clintonhealthaccess.org/" ]
 
     // Location of the plugin's issue tracker.
-    def issueManagement = [ system: "JIRA", url: "http://jira.grails.org/browse/GPRABBITMQTASKS" ]
+    def issueManagement = [ system: "JIRA", url: "http://jira.grails.org/browse/GPRMQTASKS" ]
 
     // Online location of the plugin's browseable source code.
     def scm = [ url: "http://github.com/fterrier/grails-rabbitmq-tasks/" ]

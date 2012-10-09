@@ -40,7 +40,7 @@ grails.project.dependency.resolution = {
 
     plugins {
         build(":tomcat:$grailsVersion",
-              ":release:2.0.3",
+              ":release:2.0.4",
               ":rest-client-builder:1.0.2") {
             export = false
         }
@@ -49,7 +49,7 @@ grails.project.dependency.resolution = {
 			export = false
 		}
 			  
-		compile (":shiro:1.1.5")
+		compile (":shiro:1.1.4")
 		compile (":quartz:1.0-RC2")
 		compile (":rabbitmq:1.0.0.RC2")
 		
