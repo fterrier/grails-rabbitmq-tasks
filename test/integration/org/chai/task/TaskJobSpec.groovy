@@ -1,8 +1,9 @@
 package org.chai.task
 
 import org.chai.task.Task.TaskStatus;
+import grails.plugin.spock.IntegrationSpec;
 
-class TaskJobSpec extends IntegrationTests {
+class TaskJobSpec extends IntegrationSpec {
 
 	def taskJob
 	def taskService

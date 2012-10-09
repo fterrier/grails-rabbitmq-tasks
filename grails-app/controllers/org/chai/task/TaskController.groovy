@@ -10,7 +10,6 @@ import java.util.zip.ZipOutputStream;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.NotImplementedException
-import org.apache.shiro.SecurityUtils;
 import org.chai.task.Task.TaskStatus
 import org.codehaus.groovy.grails.commons.ConfigurationHolder;
 import org.springframework.web.multipart.MultipartFile
@@ -186,7 +185,7 @@ class TaskController {
 	private def fillFields(def task) {
 		// we fill the default fields
 		task.status = TaskStatus.NEW
-		task.principal = SecurityUtils.subject.principal
+		task.principal = securityIdentity
 		task.added = new Date()
 	}
 	

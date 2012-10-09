@@ -11,3 +11,6 @@ target
 *.zip
 plugin.xml
 eclipse_workspace_settings.epf
+**.DS_Store
+**.classpath.bak
+**.project.bak

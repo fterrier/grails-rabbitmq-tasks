@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-        <name>tasks</name>
+        <name>rabbitmq-tasks</name>
         <comment></comment>
         <projects>
         </projects>
@@ -18,84 +18,89 @@
         </natures>
         <linkedResources>
 	        <link>
-	                <name>.plugin-src-shiro-1.1.5-grails-app-conf</name>
-	                <type>2</type>
-	                <locationURI>GRAILS_WORKDIR/projects/tasks/plugins/shiro-1.1.5/grails-app/conf</locationURI>
-	        </link>
-	        <link>
-	                <name>.plugin-src-shiro-1.1.5-grails-app-i18n</name>
-	                <type>2</type>
-	                <locationURI>GRAILS_WORKDIR/projects/tasks/plugins/shiro-1.1.5/grails-app/i18n</locationURI>
-	        </link>
-	        <link>
-	                <name>.plugin-src-shiro-1.1.5-grails-app-services</name>
-	                <type>2</type>
-	                <locationURI>GRAILS_WORKDIR/projects/tasks/plugins/shiro-1.1.5/grails-app/services</locationURI>
-	        </link>
-	        <link>
-	                <name>.plugin-src-shiro-1.1.5-grails-app-taglib</name>
-	                <type>2</type>
-	                <locationURI>GRAILS_WORKDIR/projects/tasks/plugins/shiro-1.1.5/grails-app/taglib</locationURI>
-	        </link>
-	        <link>
-	                <name>.plugin-src-shiro-1.1.5-src-java</name>
-	                <type>2</type>
-	                <locationURI>GRAILS_WORKDIR/projects/tasks/plugins/shiro-1.1.5/src/java</locationURI>
-	        </link>
-	        <link>
-	                <name>.plugin-src-shiro-1.1.5-src-groovy</name>
-	                <type>2</type>
-	                <locationURI>GRAILS_WORKDIR/projects/tasks/plugins/shiro-1.1.5/src/groovy</locationURI>
-	        </link>
-	        <link>
 	                <name>.plugin-src-rest-client-builder-1.0.2-src-groovy</name>
 	                <type>2</type>
-	                <locationURI>GRAILS_WORKDIR/projects/tasks/plugins/rest-client-builder-1.0.2/src/groovy</locationURI>
+	                <locationURI>GRAILS_WORKDIR/projects/rabbitmq-tasks/plugins/rest-client-builder-1.0.2/src/groovy</locationURI>
 	        </link>
 	        <link>
-	                <name>.plugin-src-release-2.0.3-src-java</name>
+	                <name>.plugin-src-release-2.0.4-src-java</name>
 	                <type>2</type>
-	                <locationURI>GRAILS_WORKDIR/projects/tasks/plugins/release-2.0.3/src/java</locationURI>
+	                <locationURI>GRAILS_WORKDIR/projects/rabbitmq-tasks/plugins/release-2.0.4/src/java</locationURI>
 	        </link>
 	        <link>
-	                <name>.plugin-src-release-2.0.3-src-groovy</name>
+	                <name>.plugin-src-release-2.0.4-src-groovy</name>
 	                <type>2</type>
-	                <locationURI>GRAILS_WORKDIR/projects/tasks/plugins/release-2.0.3/src/groovy</locationURI>
+	                <locationURI>GRAILS_WORKDIR/projects/rabbitmq-tasks/plugins/release-2.0.4/src/groovy</locationURI>
 	        </link>
 	        <link>
 	                <name>.plugin-src-rabbitmq-1.0.0.RC2-grails-app-conf</name>
 	                <type>2</type>
-	                <locationURI>GRAILS_WORKDIR/projects/tasks/plugins/rabbitmq-1.0.0.RC2/grails-app/conf</locationURI>
+	                <locationURI>GRAILS_WORKDIR/projects/rabbitmq-tasks/plugins/rabbitmq-1.0.0.RC2/grails-app/conf</locationURI>
 	        </link>
 	        <link>
 	                <name>.plugin-src-rabbitmq-1.0.0.RC2-src-groovy</name>
 	                <type>2</type>
-	                <locationURI>GRAILS_WORKDIR/projects/tasks/plugins/rabbitmq-1.0.0.RC2/src/groovy</locationURI>
+	                <locationURI>GRAILS_WORKDIR/projects/rabbitmq-tasks/plugins/rabbitmq-1.0.0.RC2/src/groovy</locationURI>
 	        </link>
 	        <link>
 	                <name>.plugin-src-quartz-1.0-RC2-grails-app-conf</name>
 	                <type>2</type>
-	                <locationURI>GRAILS_WORKDIR/projects/tasks/plugins/quartz-1.0-RC2/grails-app/conf</locationURI>
+	                <locationURI>GRAILS_WORKDIR/projects/rabbitmq-tasks/plugins/quartz-1.0-RC2/grails-app/conf</locationURI>
 	        </link>
 	        <link>
 	                <name>.plugin-src-quartz-1.0-RC2-grails-app-services</name>
 	                <type>2</type>
-	                <locationURI>GRAILS_WORKDIR/projects/tasks/plugins/quartz-1.0-RC2/grails-app/services</locationURI>
+	                <locationURI>GRAILS_WORKDIR/projects/rabbitmq-tasks/plugins/quartz-1.0-RC2/grails-app/services</locationURI>
 	        </link>
 	        <link>
 	                <name>.plugin-src-quartz-1.0-RC2-src-java</name>
 	                <type>2</type>
-	                <locationURI>GRAILS_WORKDIR/projects/tasks/plugins/quartz-1.0-RC2/src/java</locationURI>
+	                <locationURI>GRAILS_WORKDIR/projects/rabbitmq-tasks/plugins/quartz-1.0-RC2/src/java</locationURI>
 	        </link>
 	        <link>
 	                <name>.plugin-src-quartz-1.0-RC2-src-groovy</name>
 	                <type>2</type>
-	                <locationURI>GRAILS_WORKDIR/projects/tasks/plugins/quartz-1.0-RC2/src/groovy</locationURI>
+	                <locationURI>GRAILS_WORKDIR/projects/rabbitmq-tasks/plugins/quartz-1.0-RC2/src/groovy</locationURI>
+	        </link>
+	        <link>
+	                <name>.plugin-src-platform-core-1.0.M6-grails-app-conf</name>
+	                <type>2</type>
+	                <locationURI>GRAILS_WORKDIR/projects/rabbitmq-tasks/plugins/platform-core-1.0.M6/grails-app/conf</locationURI>
+	        </link>
+	        <link>
+	                <name>.plugin-src-platform-core-1.0.M6-grails-app-controllers</name>
+	                <type>2</type>
+	                <locationURI>GRAILS_WORKDIR/projects/rabbitmq-tasks/plugins/platform-core-1.0.M6/grails-app/controllers</locationURI>
+	        </link>
+	        <link>
+	                <name>.plugin-src-platform-core-1.0.M6-grails-app-i18n</name>
+	                <type>2</type>
+	                <locationURI>GRAILS_WORKDIR/projects/rabbitmq-tasks/plugins/platform-core-1.0.M6/grails-app/i18n</locationURI>
+	        </link>
+	        <link>
+	                <name>.plugin-src-platform-core-1.0.M6-grails-app-taglib</name>
+	                <type>2</type>
+	                <locationURI>GRAILS_WORKDIR/projects/rabbitmq-tasks/plugins/platform-core-1.0.M6/grails-app/taglib</locationURI>
+	        </link>
+	        <link>
+	                <name>.plugin-src-platform-core-1.0.M6-grails-app-views</name>
+	                <type>2</type>
+	                <locationURI>GRAILS_WORKDIR/projects/rabbitmq-tasks/plugins/platform-core-1.0.M6/grails-app/views</locationURI>
+	        </link>
+	        <link>
+	                <name>.plugin-src-platform-core-1.0.M6-src-java</name>
+	                <type>2</type>
+	                <locationURI>GRAILS_WORKDIR/projects/rabbitmq-tasks/plugins/platform-core-1.0.M6/src/java</locationURI>
+	        </link>
+	        <link>
+	                <name>.plugin-src-platform-core-1.0.M6-src-groovy</name>
+	                <type>2</type>
+	                <locationURI>GRAILS_WORKDIR/projects/rabbitmq-tasks/plugins/platform-core-1.0.M6/src/groovy</locationURI>
 	        </link>
 	        <link>
 	                <name>.plugin-src-hibernate-2.1.0-grails-app-i18n</name>
 	                <type>2</type>
-	                <locationURI>GRAILS_WORKDIR/projects/tasks/plugins/hibernate-2.1.0/grails-app/i18n</locationURI>
+	                <locationURI>GRAILS_WORKDIR/projects/rabbitmq-tasks/plugins/hibernate-2.1.0/grails-app/i18n</locationURI>
 	        </link>
         </linkedResources>
 </projectDescription>

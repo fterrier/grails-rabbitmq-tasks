@@ -9,21 +9,22 @@
 	<classpathentry kind="src" path="grails-app/taglib"/>
 	<classpathentry kind="src" path="test/integration"/>
 	<classpathentry kind="src" path="test/unit"/>
-	<classpathentry kind="src" path=".plugin-src-shiro-1.1.5-grails-app-conf"/>
-	<classpathentry kind="src" path=".plugin-src-shiro-1.1.5-grails-app-i18n"/>
-	<classpathentry kind="src" path=".plugin-src-shiro-1.1.5-grails-app-services"/>
-	<classpathentry kind="src" path=".plugin-src-shiro-1.1.5-grails-app-taglib"/>
-	<classpathentry kind="src" path=".plugin-src-shiro-1.1.5-src-java"/>
-	<classpathentry kind="src" path=".plugin-src-shiro-1.1.5-src-groovy"/>
 	<classpathentry kind="src" path=".plugin-src-rest-client-builder-1.0.2-src-groovy"/>
-	<classpathentry kind="src" path=".plugin-src-release-2.0.3-src-java"/>
-	<classpathentry kind="src" path=".plugin-src-release-2.0.3-src-groovy"/>
+	<classpathentry kind="src" path=".plugin-src-release-2.0.4-src-java"/>
+	<classpathentry kind="src" path=".plugin-src-release-2.0.4-src-groovy"/>
 	<classpathentry kind="src" path=".plugin-src-rabbitmq-1.0.0.RC2-grails-app-conf"/>
 	<classpathentry kind="src" path=".plugin-src-rabbitmq-1.0.0.RC2-src-groovy"/>
 	<classpathentry kind="src" path=".plugin-src-quartz-1.0-RC2-grails-app-conf"/>
 	<classpathentry kind="src" path=".plugin-src-quartz-1.0-RC2-grails-app-services"/>
 	<classpathentry kind="src" path=".plugin-src-quartz-1.0-RC2-src-java"/>
 	<classpathentry kind="src" path=".plugin-src-quartz-1.0-RC2-src-groovy"/>
+	<classpathentry kind="src" path=".plugin-src-platform-core-1.0.M6-grails-app-conf"/>
+	<classpathentry kind="src" path=".plugin-src-platform-core-1.0.M6-grails-app-controllers"/>
+	<classpathentry kind="src" path=".plugin-src-platform-core-1.0.M6-grails-app-i18n"/>
+	<classpathentry kind="src" path=".plugin-src-platform-core-1.0.M6-grails-app-taglib"/>
+	<classpathentry kind="src" path=".plugin-src-platform-core-1.0.M6-grails-app-views"/>
+	<classpathentry kind="src" path=".plugin-src-platform-core-1.0.M6-src-java"/>
+	<classpathentry kind="src" path=".plugin-src-platform-core-1.0.M6-src-groovy"/>
 	<classpathentry kind="src" path=".plugin-src-hibernate-2.1.0-grails-app-i18n"/>
 	<classpathentry kind="src" path="grails-app/jobs"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
@@ -185,22 +186,20 @@
 			<attribute name="javadoc_location" value="file:/Users/fterrier/Projects/grails-2.1.0/doc/api/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="var" path="GRAILS_IVYCACHE/org.springframework.amqp/spring-rabbit/jars/spring-rabbit-1.1.2.BUILD-SNAPSHOT.jar"/>
+	<classpathentry kind="var" path="GRAILS_IVYCACHE/org.springframework.amqp/spring-amqp/jars/spring-amqp-1.1.2.BUILD-SNAPSHOT.jar"/>
+	<classpathentry kind="var" path="GRAILS_IVYCACHE/com.rabbitmq/amqp-client/jars/amqp-client-2.8.4.jar"/>
 	<classpathentry kind="var" path="GRAILS_IVYCACHE/org.hibernate/hibernate-core/jars/hibernate-core-3.6.10.Final.jar"/>
 	<classpathentry kind="var" path="GRAILS_IVYCACHE/dom4j/dom4j/jars/dom4j-1.6.1.jar"/>
 	<classpathentry kind="var" path="GRAILS_IVYCACHE/org.hibernate/hibernate-commons-annotations/jars/hibernate-commons-annotations-3.2.0.Final.jar"/>
 	<classpathentry kind="var" path="GRAILS_IVYCACHE/org.quartz-scheduler/quartz/jars/quartz-1.8.4.jar"/>
 	<classpathentry kind="var" path="GRAILS_IVYCACHE/org.springframework.retry/spring-retry/jars/spring-retry-1.0.0.RELEASE.jar"/>
 	<classpathentry kind="var" path="GRAILS_IVYCACHE/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="var" path="GRAILS_IVYCACHE/org.springframework.amqp/spring-rabbit/jars/spring-rabbit-1.1.2.BUILD-SNAPSHOT.jar"/>
-	<classpathentry kind="var" path="GRAILS_IVYCACHE/org.springframework.amqp/spring-amqp/jars/spring-amqp-1.1.2.BUILD-SNAPSHOT.jar"/>
-	<classpathentry kind="var" path="GRAILS_IVYCACHE/com.rabbitmq/amqp-client/jars/amqp-client-2.8.4.jar"/>
-	<classpathentry kind="var" path="GRAILS_IVYCACHE/org.apache.shiro/shiro-core/bundles/shiro-core-1.1.0.jar"/>
-	<classpathentry kind="var" path="GRAILS_IVYCACHE/org.apache.shiro/shiro-web/bundles/shiro-web-1.1.0.jar"/>
-	<classpathentry kind="var" path="GRAILS_IVYCACHE/org.apache.shiro/shiro-ehcache/bundles/shiro-ehcache-1.1.0.jar"/>
-	<classpathentry kind="var" path="GRAILS_IVYCACHE/org.apache.shiro/shiro-quartz/bundles/shiro-quartz-1.1.0.jar"/>
-	<classpathentry kind="var" path="GRAILS_IVYCACHE/org.opensymphony.quartz/quartz/jars/quartz-1.6.1.jar"/>
-	<classpathentry kind="var" path="GRAILS_IVYCACHE/org.apache.shiro/shiro-aspectj/bundles/shiro-aspectj-1.1.0.jar"/>
-	<classpathentry kind="var" path="GRAILS_IVYCACHE/org.apache.shiro/shiro-spring/bundles/shiro-spring-1.1.0.jar"/>
+	<classpathentry kind="var" path="GRAILS_IVYCACHE/org.grails/grails-gdoc-engine/jars/grails-gdoc-engine-1.0.1.jar" sourcepath="/GRAILS_HOME/src/java">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/Users/fterrier/Projects/grails-2.1.0/doc/api/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="var" path="GRAILS_IVYCACHE/org.hibernate/hibernate-validator/jars/hibernate-validator-4.1.0.Final.jar"/>
 	<classpathentry kind="var" path="GRAILS_IVYCACHE/javax.validation/validation-api/jars/validation-api-1.0.0.GA.jar"/>
 	<classpathentry kind="var" path="GRAILS_IVYCACHE/javassist/javassist/jars/javassist-3.12.0.GA.jar"/>
@@ -240,6 +239,5 @@
 	<classpathentry kind="var" path="GRAILS_IVYCACHE/org.apache.tomcat.embed/tomcat-embed-core/jars/tomcat-embed-core-7.0.27.jar"/>
 	<classpathentry kind="var" path="GRAILS_IVYCACHE/org.apache.tomcat.embed/tomcat-embed-jasper/jars/tomcat-embed-jasper-7.0.27.jar"/>
 	<classpathentry kind="var" path="GRAILS_IVYCACHE/org.apache.tomcat.embed/tomcat-embed-logging-log4j/jars/tomcat-embed-logging-log4j-7.0.27.jar"/>
-	<classpathentry exported="true" kind="con" path="GROOVY_DSL_SUPPORT"/>
 	<classpathentry kind="output" path="web-app/WEB-INF/classes"/>
 </classpath>

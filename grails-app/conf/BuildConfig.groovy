@@ -49,12 +49,10 @@ grails.project.dependency.resolution = {
 			export = false
 		}
 			  
-		compile (":shiro:1.1.4")
+		compile (":platform-core:1.0.M6")
 		compile (":quartz:1.0-RC2")
 		compile (":rabbitmq:1.0.0.RC2")
 		
-		test (":spock:0.6") {
-			export = false
-		}
+		test (":spock:0.6")
     }
 }

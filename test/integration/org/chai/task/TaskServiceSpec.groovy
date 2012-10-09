@@ -1,10 +1,9 @@
 package org.chai.task
 
-import grails.test.mixin.TestFor;
-
 import org.chai.task.Task.TaskStatus;
+import grails.plugin.spock.IntegrationSpec;
 
-class TaskServiceSpec extends IntegrationTests {
+class TaskServiceSpec extends IntegrationSpec {
 
 	def taskService
 	

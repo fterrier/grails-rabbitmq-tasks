@@ -2,17 +2,17 @@ package org.chai.task
 
 import grails.converters.JSON;
 
+import grails.plugin.spock.IntegrationSpec;
 import org.chai.task.Task.TaskStatus;
 import org.codehaus.groovy.grails.plugins.testing.GrailsMockMultipartFile;
 import org.codehaus.groovy.grails.web.json.JSONObject;
 
-class TaskControllerSpec extends IntegrationTests {
+class TaskControllerSpec extends IntegrationSpec {
 
 	def taskController
 	
 	def "create task"() {
 		setup:
-		setupSecurityManager('uuid')
 		taskController = new TaskController()
 		
 		when:
@@ -28,9 +28,24 @@ class TaskControllerSpec extends IntegrationTests {
 		taskController.response.redirectedUrl == '/'
 	}
 	
+	def "test task controller sets user identity"() {
+		setup:
+		taskController = new TaskController()
+		taskController.metaClass.getSecurityIdentity = {return 'principal'}
+		
+		when:
+		taskController.params['class'] = 'DummyTask'
+		taskController.params['dataId'] = 1
+		taskController.create()
+		
+		then:
+		Task.count() == 1
+		Task.list()[0].principal == 'principal'
+		taskController.response.redirectedUrl == '/'
+	}
+	
 	def "create non-unique task"() {
 		setup:
-		setupSecurityManager('uuid')
 		new DummyTask(dataId: 1, principal: 'user', status: TaskStatus.NEW).save(failOnError: true)
 		taskController = new TaskController()
 		
@@ -46,7 +61,6 @@ class TaskControllerSpec extends IntegrationTests {
 	
 	def "create unique task that is a new task of an already completed one"() {
 		setup:
-		setupSecurityManager('uuid')
 		new DummyTask(dataId: 1, principal: 'user', status: TaskStatus.COMPLETED).save(failOnError: true)
 		taskController = new TaskController()
 		
@@ -62,7 +76,6 @@ class TaskControllerSpec extends IntegrationTests {
 	
 	def "create task validation"() {
 		setup:
-		setupSecurityManager('uuid')
 		taskController = new TaskController()
 		
 		when:
@@ -76,7 +89,6 @@ class TaskControllerSpec extends IntegrationTests {
 	
 	def "create task with wrong class"() {
 		setup:
-		setupSecurityManager('uuid')
 		taskController = new TaskController()
 		
 		when:
@@ -89,7 +101,6 @@ class TaskControllerSpec extends IntegrationTests {
 	
 	def "delete task"() {
 		setup:
-		setupSecurityManager('uuid')
 		def task = new DummyTask(dataId: 1, principal: 'uuid', status: TaskStatus.NEW, sentToQueue: false).save(failOnError: true)
 		taskController = new TaskController()
 		
@@ -104,7 +115,6 @@ class TaskControllerSpec extends IntegrationTests {
 	
 	def "delete complete task"() {
 		setup:
-		setupSecurityManager('uuid')
 		def task = new DummyTask(dataId: 1, principal: 'uuid', status: TaskStatus.COMPLETED, sentToQueue: true).save(failOnError: true)
 		taskController = new TaskController()
 		
@@ -122,7 +132,6 @@ class TaskControllerSpec extends IntegrationTests {
 //	def "delete in progress task already sent aborts the task"() {
 //		setup:
 //		def user = newUser('user', 'uuid')
-//		setupSecurityManager(user)
 //		def task = new TestDummyTask(dataId: 1, principal: 'uuid', status: TaskStatus.IN_PROGRESS, sentToQueue: true).save(failOnError: true)
 //		taskController = new TaskController()
 //		
@@ -139,7 +148,6 @@ class TaskControllerSpec extends IntegrationTests {
 	
 	def "delete new task already sent aborts the task"() {
 		setup:
-		setupSecurityManager('uuid')
 		def task = new DummyTask(dataId: 1, principal: 'uuid', status: TaskStatus.NEW, sentToQueue: true).save(failOnError: true)
 		taskController = new TaskController()
 		
@@ -259,7 +267,6 @@ class TaskControllerSpec extends IntegrationTests {
 	
 	def "create task with file - normal behaviour"() {
 		setup:
-		setupSecurityManager('principal') 
 		File tempFile = new File("test/integration/org/chai/task/testFile.csv")
 		GrailsMockMultipartFile grailsMockMultipartFile = new GrailsMockMultipartFile(
 			"testFile", "testFile.csv", "", tempFile.getBytes())
@@ -283,7 +290,6 @@ class TaskControllerSpec extends IntegrationTests {
 	
 	def "create task with file validation - no fields"() {
 		setup:
-		setupSecurityManager('uuid')
 		taskController = new TaskController()
 		
 		when:
@@ -302,7 +308,6 @@ class TaskControllerSpec extends IntegrationTests {
 	
 	def "create task with file validation - file name not correct"() {
 		setup:
-		setupSecurityManager('uuid')
 		File tempFile = new File("test/integration/org/chai/task/testFile.csv")
 		GrailsMockMultipartFile grailsMockMultipartFile = new GrailsMockMultipartFile(
 			"testFile", "testFile.wrong", "", tempFile.getBytes())
@@ -393,5 +398,6 @@ class TaskControllerSpec extends IntegrationTests {
 		taskController.response.outputStream != null
 		taskController.response.contentType == "application/zip";
 	}
+	
 	
 }
