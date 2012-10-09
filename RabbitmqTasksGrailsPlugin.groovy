@@ -2,13 +2,9 @@ class RabbitmqTasksGrailsPlugin {
     // the plugin version
     def version = "0.4"
     // the version or versions of Grails the plugin is designed for
-    def grailsVersion = "2.1 > *"
+    def grailsVersion = "1.3.3 > *"
     // the other plugins this plugin depends on
-    def dependsOn = [
-		"quartz":"1.0-RC2",
-		"rabbitmq":"1.0.0.RC2",
-		"shiro":"1.1.5"
-	]
+    def dependsOn = [:]
     // resources that are excluded from plugin packaging
     def pluginExcludes = [
         "grails-app/views/error.gsp",
@@ -39,7 +35,7 @@ them, and aborting them.
     def organization = [ name: "Clinton Health Access Initiative", url: "http://www.clintonhealthaccess.org/" ]
 
     // Location of the plugin's issue tracker.
-    def issueManagement = [ system: "JIRA", url: "http://jira.grails.org/browse/GPTASKS" ]
+    def issueManagement = [ system: "JIRA", url: "http://jira.grails.org/browse/GPRABBITMQTASKS" ]
 
     // Online location of the plugin's browseable source code.
     def scm = [ url: "http://github.com/fterrier/grails-rabbitmq-tasks/" ]

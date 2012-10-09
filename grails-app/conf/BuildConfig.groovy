@@ -10,10 +10,9 @@ grails.project.dependency.resolution = {
     }
     log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
     repositories {
-		grailsRepo "http://grails.org/plugins"
-		grailsPlugins()
-        grailsCentral()
 		grailsHome()
+		grailsPlugins()
+		grailsCentral()
         // uncomment the below to enable remote dependency resolution
         // from public Maven repositories
 		mavenCentral()
@@ -50,14 +49,8 @@ grails.project.dependency.resolution = {
 			export = false
 		}
 			  
-		compile (":shiro:1.1.5") {
-			export = false
-		}
-		
-		compile (":quartz:1.0-RC2") {
-			export = false
-		}
-		
+		compile (":shiro:1.1.5")
+		compile (":quartz:1.0-RC2")
 		compile (":rabbitmq:1.0.0.RC2")
 		
 		test (":spock:0.6") {
