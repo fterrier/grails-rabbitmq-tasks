@@ -20,7 +20,7 @@ Configuration
 		
 There is one configuration option that can be set to specify the directory for temporary output files:
 
-		grails.tasks.task.temp.folder=/tmp 
+		grails.tasks.task.temp.folder="/tmp" 
 
 Create a simple task with no input/output
 ---
