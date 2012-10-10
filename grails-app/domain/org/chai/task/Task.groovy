@@ -23,7 +23,7 @@ abstract class Task implements Progress {
 	// progress
 	Long max = 0;
 	Long current = null;
-	Boolean aborted = false;
+	Boolean aborted;
 	
 	abstract def executeTask()
 	abstract boolean isUnique()
@@ -53,10 +53,10 @@ abstract class Task implements Progress {
 	
 	void incrementProgress(Long increment = null) {
 		if (log.isDebugEnabled()) log.debug('incrementProgress, max: '+ max +', current: '+current)
-		if (aborted) throw new TaskAbortedException()
 		
 		if (current != null) {
 			Task.withNewTransaction {
+				if (aborted) throw new TaskAbortedException()
 				if (increment == null) current++
 				else current += increment
 				this.save(flush: true)

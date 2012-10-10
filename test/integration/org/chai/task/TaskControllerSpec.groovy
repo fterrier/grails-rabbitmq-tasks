@@ -146,7 +146,7 @@ class TaskControllerSpec extends IntegrationSpec {
 //	}
 	
 	
-	def "delete new task already sent aborts the task"() {
+	def "delete new task already sent deletes the task"() {
 		setup:
 		def task = new DummyTask(dataId: 1, principal: 'uuid', status: TaskStatus.NEW, sentToQueue: true).save(failOnError: true)
 		taskController = new TaskController()
