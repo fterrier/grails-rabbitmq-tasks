@@ -206,6 +206,17 @@ Another action allows one to delete all ``COMPLETED`` tasks from the database.
 		def purge = {
 			// Purges all COMPLETED tasks
 		}
+		
+Security Provider
+---
+
+The Tasks plugin uses the [Platform Core] to store the user identity as the ``principal`` property on the Task created using the ``TaskController`` if a Security API implementation is provided.
+
+An example of how to implement the Platform Core [SecurityBridge] interface for the [Shiro] plugin is provided in the plugin test file [ShiroSecurityBridge] for you to check out.
+[Shiro]: http://grails.org/plugin/shiro
+[Platform Core]: http://grails.org/plugin/platform-core
+[SecurityBridge]: http://grailsrocks.github.com/grails-platform-core/gapi/org/grails/plugin/platform/security/SecurityBridge.html
+[ShiroSecurityBridge]: https://github.com/fterrier/grails-rabbitmq-tasks/blob/master/test/projects/test-task-project/grails-app/services/org/chai/task/ShiroSecurityBridge.groovy
 
 License
 ---
