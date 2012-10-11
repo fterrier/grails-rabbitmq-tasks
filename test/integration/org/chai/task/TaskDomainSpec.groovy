@@ -28,12 +28,12 @@ class TaskDomainSpec extends IntegrationSpec {
 		thrown ValidationException
 	}
 	
-	def "increment progress on aborted class throws exception"() {
+	def "increment progress on userAborted class throws exception"() {
 		setup:
 		def task = new DummyTask(principal: 'principal', status: TaskStatus.IN_PROGRESS, dataId: 1).save(failOnError: true)
 		task.max = 1
 		task.current = 0
-		task.aborted = true
+		task.userAborted = true
 		
 		when:
 		task.incrementProgress()
@@ -53,7 +53,7 @@ class TaskDomainSpec extends IntegrationSpec {
 		task.abort()
 		
 		then:
-		task.aborted == true
+		task.userAborted == true
 		
 		cleanup:
 		Task.withNewTransaction {

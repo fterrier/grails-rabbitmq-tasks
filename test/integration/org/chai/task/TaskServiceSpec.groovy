@@ -61,7 +61,7 @@ class TaskServiceSpec extends IntegrationSpec {
 		notThrown RuntimeException
 	}
 	
-	def "execute task does not do anything if task is aborted"() {
+	def "execute task does not do anything if task is userAborted"() {
 		setup:
 		def task = new DummyTask(principal: 'principal', status: TaskStatus.ABORTED, dataId: 1).save(failOnError:true)
 		task.metaClass.executeTask {throw new RuntimeException()}
@@ -73,10 +73,10 @@ class TaskServiceSpec extends IntegrationSpec {
 		notThrown RuntimeException
 	}
 	
-	def "execute task does not do anything if task is aborted by user and sets aborted status"() {
+	def "execute task does not do anything if task is userAborted by user and sets userAborted status"() {
 		setup:
 		def task = new DummyTask(principal: 'principal', status: TaskStatus.IN_PROGRESS, dataId: 1).save(failOnError:true)
-		task.aborted = true
+		task.userAborted = true
 		task.metaClass.executeTask {throw new RuntimeException()}
 		
 		when:
@@ -87,10 +87,10 @@ class TaskServiceSpec extends IntegrationSpec {
 		Task.list()[0].status == TaskStatus.ABORTED
 	}
 	
-	def "execute task throwing TaskAbortException is set as aborted"() {
+	def "execute task throwing TaskAbortException is set as userAborted"() {
 		setup:
 		def task = new DummyTask(principal: 'principal', status: TaskStatus.NEW, dataId: 1).save(failOnError:true)
-		task.metaClass.executeTask {task.aborted = true; throw new TaskAbortedException();}
+		task.metaClass.executeTask {task.userAborted = true; throw new TaskAbortedException();}
 		
 		when:
 		taskService.executeTask(task.id)
@@ -100,7 +100,7 @@ class TaskServiceSpec extends IntegrationSpec {
 		Task.list()[0].status == TaskStatus.ABORTED
 	}
 	
-	def "task is set as aborted when abort exception is thrown"() {
+	def "task is set as userAborted when abort exception is thrown"() {
 		setup:
 		def task = new DummyTask(principal: 'principal', status: TaskStatus.NEW, dataId: 1).save(failOnError:true)
 		task.metaClass.executeTask {throw new TaskAbortedException()}

@@ -23,7 +23,7 @@ abstract class Task implements Progress {
 	// progress
 	Long max = 0;
 	Long current = null;
-	Boolean aborted;
+	Boolean userAborted;
 	
 	abstract def executeTask()
 	abstract boolean isUnique()
@@ -56,7 +56,7 @@ abstract class Task implements Progress {
 		
 		if (current != null) {
 			Task.withNewTransaction {
-				if (aborted) throw new TaskAbortedException()
+				if (userAborted) throw new TaskAbortedException()
 				if (increment == null) current++
 				else current += increment
 				this.save(flush: true)
@@ -74,13 +74,13 @@ abstract class Task implements Progress {
 	
 	void abort() {
 		Task.withNewTransaction {
-			aborted = true
+			userAborted = true
 			this.save(flush: true)
 		}
 	}
 	
 	boolean isAborted() {
-		return aborted
+		return userAborted
 	}
 	
 	Double retrievePercentage() {
@@ -99,8 +99,12 @@ abstract class Task implements Progress {
 		max(nullable: false)
 		current(nullable: true)
 		
+		userAborted(nullable: true)
+		
 		started(nullable: true)
 		finished(nullable: true)
+		
+		userAborted(nullable: true)
 	}
 	
 }

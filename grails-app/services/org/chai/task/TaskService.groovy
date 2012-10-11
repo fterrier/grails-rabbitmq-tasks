@@ -36,7 +36,7 @@ class TaskService {
 		}
 		
 		if (task != null && task.status != TaskStatus.COMPLETED && task.status != TaskStatus.ABORTED) {
-			if (!task.aborted) {
+			if (!task.userAborted) {
 				// we set the status to in_progress
 				Task.withTransaction {
 					task.status = TaskStatus.IN_PROGRESS
@@ -50,13 +50,13 @@ class TaskService {
 					task.executeTask()
 				} 
 				catch (TaskAbortedException e) {
-					if (log.isInfoEnabled()) log.info('task aborted: '+task)
+					if (log.isInfoEnabled()) log.info('task userAborted: '+task)
 				}
 			}
 			
 			Task.withTransaction {
-				// we set the status to complete or aborted
-				if (task.aborted) task.status = TaskStatus.ABORTED
+				// we set the status to complete or userAborted
+				if (task.userAborted) task.status = TaskStatus.ABORTED
 				else task.status = TaskStatus.COMPLETED
 				
 				task.finished = new Date()

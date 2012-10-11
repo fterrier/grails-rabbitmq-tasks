@@ -128,7 +128,7 @@ class TaskControllerSpec extends IntegrationSpec {
 	}
 	
 	// cannot test because of withNewTransaction call, and abort()
-	// seems to not be overridable using metaClass (task.metaClass.abort = {aborted = true})
+	// seems to not be overridable using metaClass (task.metaClass.abort = {userAborted = true})
 //	def "delete in progress task already sent aborts the task"() {
 //		setup:
 //		def user = newUser('user', 'uuid')
@@ -141,7 +141,7 @@ class TaskControllerSpec extends IntegrationSpec {
 //		
 //		then:
 //		Task.count() == 1
-//		Task.list()[].aborted == true
+//		Task.list()[].userAborted == true
 //		taskController.response.redirectedUrl == '/'
 //	}
 	
